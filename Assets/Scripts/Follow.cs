@@ -7,7 +7,6 @@ public class Follow : MonoBehaviour
     public float speed = 10.0f;
     private Vector3 _direction;
     public float minChaseDistance = 2.0f;
-    public float fieldOfView = 20.0f;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,14 +20,11 @@ public class Follow : MonoBehaviour
     void LateUpdate()
     {
         _direction = goal.transform.position - transform.position;
-        if (Vector3.Angle(_direction, transform.forward) <= fieldOfView/2)
+        transform.LookAt(goal.transform.position);
+        if (_direction.sqrMagnitude > minChaseDistance*minChaseDistance)
         {
-            transform.LookAt(goal.transform.position);
-            if (_direction.sqrMagnitude > minChaseDistance * minChaseDistance)
-            {
-                Vector3 velocity = Time.deltaTime * speed * _direction.normalized;
-                transform.Translate(velocity, Space.World);
-            }
+            Vector3 velocity = Time.deltaTime * speed * _direction.normalized;
+            transform.Translate(velocity, Space.World);
         }
     }
 }
