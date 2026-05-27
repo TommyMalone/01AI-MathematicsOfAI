@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/SceneSelect.unity
+    guid: 33d64032660b7714a852c245bda4d5df
+  - enabled: 1
+    path: Assets/Scenes/Moving.unity
+    guid: fc49b075a56f74b0d9093b16acda486d
+  - enabled: 1
+    path: Assets/Scenes/PetZombie.unity
+    guid: d17be19cb917247c1bcd2f0084bc2eda
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
